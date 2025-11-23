@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Excel Formula Bot (Synth Edition)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Space Grotesk"', 'sans-serif'],
+              mono: ['"Roboto Mono"', 'monospace'],
+            },
+            colors: {
+              synth: {
+                bg: "#E5E5E5",
+                plastic: "#F0F0F0",
+                orange: "#FF4F00",
+                dark: "#333333",
+                lcd: "#93C5FD",
+                lcdText: "#1e3a8a",
+                border: "#9ca3af"
+              }
+            },
+            boxShadow: {
+              'hard': '4px 4px 0px 0px rgba(0,0,0,0.2)',
+              'hard-sm': '2px 2px 0px 0px rgba(0,0,0,0.2)',
+              'inset-hard': 'inset 2px 2px 4px 0px rgba(0,0,0,0.1)',
+              'plastic': '-2px -2px 0px #FFFFFF, 2px 2px 0px #9CA3AF',
+              'plastic-active': 'inset 2px 2px 0px #9CA3AF, inset -2px -2px 0px #FFFFFF',
+              'screen': 'inset 4px 4px 10px rgba(0,0,0,0.1), inset -2px -2px 5px rgba(255,255,255,0.5)',
+            },
+            animation: {
+              'cursor-blink': 'blink 1s step-end infinite',
+            },
+            keyframes: {
+              blink: {
+                '0%, 100%': { opacity: '1' },
+                '50%': { opacity: '0' },
+              }
+            }
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: #E5E5E5;
+        color: #333333;
+        font-family: 'Space Grotesk', sans-serif;
+      }
+      
+      /* Pattern Overlay for Texture */
+      .texture-noise {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 50;
+        opacity: 0.03;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      }
+
+      /* Custom Scrollbar for Industrial look */
+      ::-webkit-scrollbar {
+        width: 12px;
+        background: #D4D4D4;
+        border-left: 1px solid #999;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #999; 
+        border: 2px solid #D4D4D4;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #777; 
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.5.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div class="texture-noise"></div>
+    <div id="root"></div>
+  </body>
+</html>

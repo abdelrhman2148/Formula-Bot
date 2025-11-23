@@ -1,0 +1,5 @@
+{
+  "name": "Excel Formula Bot (Premium)",
+  "description": "An AI-powered premium web application that generates Excel and Google Sheets formulas from natural language descriptions using Gemini 2.5 Flash.",
+  "requestFramePermissions": []
+}
